@@ -1,0 +1,201 @@
+[
+    {
+        "label": "AE",
+        "importPath": "pynetdicom",
+        "description": "pynetdicom",
+        "isExtraImport": true,
+        "detail": "pynetdicom",
+        "documentation": {}
+    },
+    {
+        "label": "evt",
+        "importPath": "pynetdicom",
+        "description": "pynetdicom",
+        "isExtraImport": true,
+        "detail": "pynetdicom",
+        "documentation": {}
+    },
+    {
+        "label": "Verification",
+        "importPath": "pynetdicom.sop_class",
+        "description": "pynetdicom.sop_class",
+        "isExtraImport": true,
+        "detail": "pynetdicom.sop_class",
+        "documentation": {}
+    },
+    {
+        "label": "UltrasoundImageStorage",
+        "importPath": "pynetdicom.sop_class",
+        "description": "pynetdicom.sop_class",
+        "isExtraImport": true,
+        "detail": "pynetdicom.sop_class",
+        "documentation": {}
+    },
+    {
+        "label": "UltrasoundMultiFrameImageStorage",
+        "importPath": "pynetdicom.sop_class",
+        "description": "pynetdicom.sop_class",
+        "isExtraImport": true,
+        "detail": "pynetdicom.sop_class",
+        "documentation": {}
+    },
+    {
+        "label": "EnhancedUSVolumeStorage",
+        "importPath": "pynetdicom.sop_class",
+        "description": "pynetdicom.sop_class",
+        "isExtraImport": true,
+        "detail": "pynetdicom.sop_class",
+        "documentation": {}
+    },
+    {
+        "label": "RawDataStorage",
+        "importPath": "pynetdicom.sop_class",
+        "description": "pynetdicom.sop_class",
+        "isExtraImport": true,
+        "detail": "pynetdicom.sop_class",
+        "documentation": {}
+    },
+    {
+        "label": "SpatialRegistrationStorage",
+        "importPath": "pynetdicom.sop_class",
+        "description": "pynetdicom.sop_class",
+        "isExtraImport": true,
+        "detail": "pynetdicom.sop_class",
+        "documentation": {}
+    },
+    {
+        "label": "SpatialFiducialsStorage",
+        "importPath": "pynetdicom.sop_class",
+        "description": "pynetdicom.sop_class",
+        "isExtraImport": true,
+        "detail": "pynetdicom.sop_class",
+        "documentation": {}
+    },
+    {
+        "label": "ModalityWorklistInformationFind",
+        "importPath": "pynetdicom.sop_class",
+        "description": "pynetdicom.sop_class",
+        "isExtraImport": true,
+        "detail": "pynetdicom.sop_class",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "keyword_for_tag",
+        "importPath": "pydicom.datadict",
+        "description": "pydicom.datadict",
+        "isExtraImport": true,
+        "detail": "pydicom.datadict",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "pydicom.dataset",
+        "description": "pydicom.dataset",
+        "isExtraImport": true,
+        "detail": "pydicom.dataset",
+        "documentation": {}
+    },
+    {
+        "label": "Dataset",
+        "importPath": "pydicom.dataset",
+        "description": "pydicom.dataset",
+        "isExtraImport": true,
+        "detail": "pydicom.dataset",
+        "documentation": {}
+    },
+    {
+        "label": "Sequence",
+        "importPath": "pydicom.sequence",
+        "description": "pydicom.sequence",
+        "isExtraImport": true,
+        "detail": "pydicom.sequence",
+        "documentation": {}
+    },
+    {
+        "label": "handle_echo",
+        "kind": 2,
+        "importPath": "server",
+        "description": "server",
+        "peekOfCode": "def handle_echo(event):\n    logging.info(\"Received C-ECHO request from %s\", event.assoc.requestor.address)\n    logging.info(\"Handling C-ECHO request...\")\n    return 0x0000\n# Define a handler for the DICOM C-STORE requests\ndef handle_store(event):\n    logging.info(\"Received C-STORE request from %s\", event.assoc.requestor.address)\n    logging.info(\"Handling C-STORE request...\")\n    # Decode the DICOM dataset\n    ds = event.dataset",
+        "detail": "server",
+        "documentation": {}
+    },
+    {
+        "label": "handle_store",
+        "kind": 2,
+        "importPath": "server",
+        "description": "server",
+        "peekOfCode": "def handle_store(event):\n    logging.info(\"Received C-STORE request from %s\", event.assoc.requestor.address)\n    logging.info(\"Handling C-STORE request...\")\n    # Decode the DICOM dataset\n    ds = event.dataset\n    ds.file_meta = event.file_meta\n    # Log more information about the received dataset\n    logging.info(\"Modality: %s\", ds.get(\"Modality\", \"N/A\"))\n    logging.info(\"SOP Class UID: %s\", ds.file_meta.MediaStorageSOPClassUID)\n    logging.info(\"SOP Instance UID: %s\", ds.SOPInstanceUID)",
+        "detail": "server",
+        "documentation": {}
+    },
+    {
+        "label": "handle_find",
+        "kind": 2,
+        "importPath": "server",
+        "description": "server",
+        "peekOfCode": "def handle_find(event):\n    logging.info(\"Received C-FIND request from %s\", event.assoc.requestor.address)\n    logging.info(\"Handling C-FIND request...\")\n    request = event.identifier\n    logging.info(\"C-FIND request dataset:\")\n    for elem in request.elements():\n        tag = f\"({elem.tag.group:04x},{elem.tag.element:04x})\"\n        keyword = keyword_for_tag(elem.tag)\n        value = elem.value if elem.value is not None else \"(no value available)\"\n        logging.info(f\"{tag}: {keyword} = {value}\")",
+        "detail": "server",
+        "documentation": {}
+    },
+    {
+        "label": "ae",
+        "kind": 5,
+        "importPath": "server",
+        "description": "server",
+        "peekOfCode": "ae = AE()\n# Add supported presentation contexts\nlogging.info(\"Adding supported presentation contexts\")\nae.add_supported_context(Verification)\nae.add_supported_context(UltrasoundImageStorage)\nae.add_supported_context(UltrasoundMultiFrameImageStorage)\nae.add_supported_context(EnhancedUSVolumeStorage)\nae.add_supported_context(RawDataStorage)\nae.add_supported_context(SpatialRegistrationStorage)\nae.add_supported_context(SpatialFiducialsStorage)",
+        "detail": "server",
+        "documentation": {}
+    },
+    {
+        "label": "handlers",
+        "kind": 5,
+        "importPath": "server",
+        "description": "server",
+        "peekOfCode": "handlers = [\n    (evt.EVT_C_ECHO, handle_echo),\n    (evt.EVT_C_STORE, handle_store),\n    (evt.EVT_C_FIND, handle_find),\n]\n# Start the DICOM server on port 8080\nserver_address = ('', 8080)\nlogging.info('Starting DICOM server on port %d...', server_address[1])\ntry:\n    ae.start_server(server_address, evt_handlers=handlers)",
+        "detail": "server",
+        "documentation": {}
+    },
+    {
+        "label": "server_address",
+        "kind": 5,
+        "importPath": "server",
+        "description": "server",
+        "peekOfCode": "server_address = ('', 8080)\nlogging.info('Starting DICOM server on port %d...', server_address[1])\ntry:\n    ae.start_server(server_address, evt_handlers=handlers)\nexcept Exception as e:\n    logging.error('Failed to start DICOM server: %s', e)\nelse:\n    logging.info('DICOM server successfully started on port %d', server_address[1])",
+        "detail": "server",
+        "documentation": {}
+    }
+]
